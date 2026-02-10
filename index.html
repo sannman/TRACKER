@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitness & Nutrition Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Fitness & Nutrition Tracker</h1>
+      <p>Log workouts, meals, and watch your daily progress.</p>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Add Workout</h2>
+        <form id="workout-form">
+          <label>
+            Workout
+            <input type="text" id="workout-name" placeholder="Run, Lift, Yoga..." required />
+          </label>
+          <label>
+            Duration (minutes)
+            <input type="number" id="workout-duration" min="1" required />
+          </label>
+          <label>
+            Calories Burned
+            <input type="number" id="workout-calories" min="0" required />
+          </label>
+          <button type="submit">Add Workout</button>
+        </form>
+      </article>
+
+      <article class="card">
+        <h2>Add Meal</h2>
+        <form id="meal-form">
+          <label>
+            Meal
+            <input type="text" id="meal-name" placeholder="Chicken salad..." required />
+          </label>
+          <label>
+            Calories
+            <input type="number" id="meal-calories" min="0" required />
+          </label>
+          <label>
+            Protein (g)
+            <input type="number" id="meal-protein" min="0" required />
+          </label>
+          <label>
+            Carbs (g)
+            <input type="number" id="meal-carbs" min="0" required />
+          </label>
+          <label>
+            Fat (g)
+            <input type="number" id="meal-fat" min="0" required />
+          </label>
+          <button type="submit">Add Meal</button>
+        </form>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Daily Summary</h2>
+        <div class="stats">
+          <div><span>Workout Minutes</span><strong id="stat-minutes">0</strong></div>
+          <div><span>Calories Burned</span><strong id="stat-burned">0</strong></div>
+          <div><span>Calories Eaten</span><strong id="stat-eaten">0</strong></div>
+          <div><span>Net Calories</span><strong id="stat-net">0</strong></div>
+          <div><span>Protein</span><strong id="stat-protein">0g</strong></div>
+          <div><span>Carbs</span><strong id="stat-carbs">0g</strong></div>
+          <div><span>Fat</span><strong id="stat-fat">0g</strong></div>
+        </div>
+        <button id="reset-btn" class="danger">Reset Today</button>
+      </article>
+
+      <article class="card">
+        <h2>Today's Logs</h2>
+        <h3>Workouts</h3>
+        <ul id="workout-list" class="entry-list"></ul>
+        <h3>Meals</h3>
+        <ul id="meal-list" class="entry-list"></ul>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
