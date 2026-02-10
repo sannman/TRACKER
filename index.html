@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness & Nutrition Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Fitness & Nutrition Tracker</h1>
+        <p>Track workouts, meals, and your daily calorie balance.</p>
+      </header>
+
+      <section class="summary-grid" aria-label="Daily summary cards">
+        <article class="card">
+          <h2>Calories Burned</h2>
+          <p id="caloriesBurned" class="metric">0</p>
+        </article>
+        <article class="card">
+          <h2>Calories Consumed</h2>
+          <p id="caloriesConsumed" class="metric">0</p>
+        </article>
+        <article class="card">
+          <h2>Net Calories</h2>
+          <p id="netCalories" class="metric">0</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Add Workout</h2>
+        <form id="workoutForm" class="form-grid">
+          <label>
+            Exercise
+            <input type="text" id="exercise" placeholder="e.g., Running" required />
+          </label>
+          <label>
+            Minutes
+            <input type="number" id="duration" min="1" placeholder="30" required />
+          </label>
+          <label>
+            Calories Burned
+            <input type="number" id="burned" min="0" placeholder="250" required />
+          </label>
+          <button type="submit">Add Workout</button>
+        </form>
+        <ul id="workoutList" class="entry-list" aria-label="Workout entries"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Add Meal</h2>
+        <form id="mealForm" class="form-grid">
+          <label>
+            Meal/Food
+            <input type="text" id="food" placeholder="e.g., Grilled Chicken" required />
+          </label>
+          <label>
+            Quantity
+            <input type="text" id="quantity" placeholder="e.g., 1 plate" required />
+          </label>
+          <label>
+            Calories Consumed
+            <input type="number" id="consumed" min="0" placeholder="450" required />
+          </label>
+          <button type="submit">Add Meal</button>
+        </form>
+        <ul id="mealList" class="entry-list" aria-label="Meal entries"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
